@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SCLAlertView
 
-class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelegate  {
+class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate  {
     
     // MARK: IBOutlet
     
@@ -23,23 +23,23 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
     var events = [Event]()
     let searchController = UISearchController(searchResultsController: nil)
     var filteredEvents = [Event]()
+    var showSearchBar: Bool = false
     
     //MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(EventsFeedVC.searchBar(_:)))
+        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
         
         addSlideMenuButton()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        searchController.searchBar.delegate = self
         
         launchRequests()
         
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -163,13 +163,36 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    func filterContentForSearchText(searchText: String) {
+    private func filterContentForSearchText(searchText: String) {
         filteredEvents = events.filter { event in
             return event.artistName.lowercaseString.containsString(searchText.lowercaseString)
         }
         
         tableView.reloadData()
     }
+    
+    @objc private func searchBar(sender:UIButton) {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
+        if !showSearchBar {
+            tableView.tableHeaderView = searchController.searchBar
+            searchController.searchBar.becomeFirstResponder()
+            showSearchBar = false
+        } else {
+            tableView.tableHeaderView = nil
+            showSearchBar = true
+        }
+        
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        tableView.tableHeaderView = nil
+        //self.searchDisplayController?.setActive(false, animated: true)
+        showSearchBar = false
+    }
+    
 
 }
 
