@@ -177,19 +177,21 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
         definesPresentationContext = true
         
         if !showSearchBar {
+            searchController.searchBar.hidden = false
+            showSearchBar = false
             tableView.tableHeaderView = searchController.searchBar
             searchController.searchBar.becomeFirstResponder()
-            showSearchBar = false
         } else {
-            tableView.tableHeaderView = nil
+            searchController.searchBar.hidden = true
             showSearchBar = true
+            tableView.tableHeaderView = nil
         }
         
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchController.searchBar.hidden = true
         tableView.tableHeaderView = nil
-        //self.searchDisplayController?.setActive(false, animated: true)
         showSearchBar = false
     }
     
