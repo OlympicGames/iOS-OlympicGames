@@ -48,6 +48,12 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //To enabled the search button - compulsory
+        self.navigationItem.rightBarButtonItem?.enabled = true
+    }
+    
     // MARK: TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
