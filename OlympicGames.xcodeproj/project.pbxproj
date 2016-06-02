@@ -11,6 +11,8 @@
 		331EAA2B1CD62DC60020F6F8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EAA2A1CD62DC60020F6F8 /* Extensions.swift */; };
 		331EAA2D1CD77FB70020F6F8 /* WaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EAA2C1CD77FB70020F6F8 /* WaitView.swift */; };
 		331EAA2F1CD77FCA0020F6F8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EAA2E1CD77FCA0020F6F8 /* ErrorView.swift */; };
+		3330240A1CF1F548007BCD93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333024091CF1F548007BCD93 /* User.swift */; };
+		3330240D1CF209E5007BCD93 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330240C1CF209E5007BCD93 /* Facebook.swift */; };
 		33A018E31CCB867400F98614 /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A018E21CCB867400F98614 /* EventDetailsVC.swift */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
 		753A55C81BB073E900254F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C61BB073E900254F27 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		331EAA2A1CD62DC60020F6F8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		331EAA2C1CD77FB70020F6F8 /* WaitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitView.swift; sourceTree = "<group>"; };
 		331EAA2E1CD77FCA0020F6F8 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		333024091CF1F548007BCD93 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3330240C1CF209E5007BCD93 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		33A018E21CCB867400F98614 /* EventDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
 		677A36998260A90B0D3F5CAF /* Pods_OlympicGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OlympicGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55BD1BB073E900254F27 /* OlympicGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OlympicGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,15 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		3330240B1CF209C9007BCD93 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3330240C1CF209E5007BCD93 /* Facebook.swift */,
+			);
+			name = Authentication;
+			path = OlympicGames/Sources/UI/Authentication;
+			sourceTree = SOURCE_ROOT;
 		};
 		33A018E11CCB861000F98614 /* About */ = {
 			isa = PBXGroup;
@@ -169,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				33A018E11CCB861000F98614 /* About */,
+				3330240B1CF209C9007BCD93 /* Authentication */,
 				C27CBD4C1CC9365000ADA810 /* EventDetails */,
 				C27CBD4D1CC9365000ADA810 /* Events */,
 			);
@@ -216,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				C27CBD561CCA7BC800ADA810 /* Event.swift */,
+				333024091CF1F548007BCD93 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +402,8 @@
 				C222DF0F1CC7F1BC0040D422 /* MenuViewController.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* EventsFeedVC.swift in Sources */,
 				753A55E31BB0753B00254F27 /* BaseViewController.swift in Sources */,
+				3330240A1CF1F548007BCD93 /* User.swift in Sources */,
+				3330240D1CF209E5007BCD93 /* Facebook.swift in Sources */,
 				C27CBD521CCA7A0B00ADA810 /* EventCellTableViewCell.swift in Sources */,
 				33A018E31CCB867400F98614 /* EventDetailsVC.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,

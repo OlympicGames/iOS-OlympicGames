@@ -127,13 +127,13 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
                 
                 for snap in snapshots {
                     
-                    // Make our jokes array for the tableView.
+                    // Make our events array for the tableView.
                     
                     if let postDictionary = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let event = Event(key: key, dictionary: postDictionary)
-                        
-                        // Items are returned chronologically, but it's more fun with the newest jokes first.
+                        print("postDictionary \(postDictionary)")
+                        // Items are returned chronologically, but it's more fun with the newest events first.
                         
                         self.events.insert(event, atIndex: 0)
                     }
@@ -150,8 +150,12 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
                 
         })
 
+    }
     
-    
+    private func rightBarButtons() {
+        let rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(EventsFeedVC.searchBar(_:)))
+        //let loginBtnItem = UIBarButtonItem(customView:)
+        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
     }
     
     private func eventAtIndexPath(indexPath: NSIndexPath) -> Event {

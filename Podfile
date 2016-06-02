@@ -6,5 +6,10 @@
 target 'OlympicGames' do
 	pod 'Firebase', '>= 2.5.0'
 	pod 'SCLAlertView'
+
+	#Facebook
+	pod ‘Bolts’
+	pod ‘FBSDKCoreKit’
+	pod ‘FBSDKLoginKit’
 end
 

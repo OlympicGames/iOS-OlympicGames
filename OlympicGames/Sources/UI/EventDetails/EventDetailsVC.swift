@@ -8,12 +8,18 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class EventDetailsVC: UIViewController {
     
+    // MARK: IBOutlet
     @IBOutlet weak var goButton: UILabel!
     
+    //MARK: Variable
     var event: Event?
+    //var facebook: Facebook!
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -24,9 +30,11 @@ class EventDetailsVC: UIViewController {
     
     @IBAction func switchChanged(sender: UISwitch) {
         if sender.on {
-            goButton.textColor = UIColor.greenColor()
+            //goButton.textColor = UIColor.greenColor()
+            self.facebookLogin(sender)
         } else {
             goButton.textColor = UIColor.redColor()
         }
     }
+    
 }

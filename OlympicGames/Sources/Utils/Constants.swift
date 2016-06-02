@@ -16,3 +16,8 @@ let ARTIST_NAME = "artistName"
 let EVENT_PLACE = "eventPlace"
 let EVENT_TYPE = "eventType"
 let EVENT_PRICE = "eventPrice"
+
+//Users
+let USER_NAME = "name"
+let USER_EMAIL = "email"
+let USER_PROVIDER = "provider"
