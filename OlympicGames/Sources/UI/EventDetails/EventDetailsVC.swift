@@ -31,7 +31,7 @@ class EventDetailsVC: UIViewController {
     @IBAction func switchChanged(sender: UISwitch) {
         if sender.on {
             //goButton.textColor = UIColor.greenColor()
-            self.facebookLogin(sender)
+            self.facebookLogin()
         } else {
             goButton.textColor = UIColor.redColor()
         }

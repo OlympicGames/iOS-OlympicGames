@@ -27,9 +27,9 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         switch(index){
         case 0:
             print("Home\n", terminator: "")
-            self.navigationItem.rightBarButtonItem?.enabled = true
+            enableRightBarButtonItems()
             self.openViewControllerBasedOnIdentifier("Events")
-            
+    
             break
         case 1:
             print("About\n", terminator: "")
@@ -38,6 +38,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             
             break
         default:
+            enableRightBarButtonItems()
             print("default\n", terminator: "")
         }
     }
@@ -90,8 +91,8 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         {
             // To Hide Menu If it already there
             self.slideMenuItemSelectedAtIndex(-1);
-            //To enabled the search button
-            self.navigationItem.rightBarButtonItem?.enabled = true
+            //To enabled the right bar buttons
+            enableRightBarButtonItems()
             
             sender.tag = 0;
             
@@ -112,7 +113,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         
         sender.enabled = false
         sender.tag = 10
-        self.navigationItem.rightBarButtonItem?.enabled = false
+        disableRightBarButtonItems()
         
         let menuVC : MenuViewController = self.storyboard!.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
         menuVC.btnMenu = sender

@@ -30,7 +30,8 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         let rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(EventsFeedVC.searchBar(_:)))
-        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
+        let rightFbBarButtonItem:UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "login"), landscapeImagePhone: nil, style: .Done, target: self, action: #selector(facebookLogin))
+        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem, rightFbBarButtonItem], animated: true)
         
         addSlideMenuButton()
         
@@ -51,7 +52,7 @@ class EventsFeedVC: BaseViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //To enabled the search button - compulsory
-        self.navigationItem.rightBarButtonItem?.enabled = true
+        enableRightBarButtonItems()
     }
     
     // MARK: TableView

@@ -13,7 +13,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 extension UIViewController {
-    func facebookLogin (sender: AnyObject){
+    func facebookLogin (){
         let facebookLogin = FBSDKLoginManager()
         let myRoothRef = DataService.dataService.BASE_REF
         print("Logging In")

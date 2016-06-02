@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: EventsFeedVC
 
@@ -22,5 +23,21 @@ extension NSUserDefaults {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         return isFirstLaunch
+    }
+}
+
+// MARK: UIViewController
+
+extension UIViewController {
+    func enableRightBarButtonItems() {
+        for button in self.navigationItem.rightBarButtonItems! {
+            button.enabled = true
+        }
+    }
+    
+    func disableRightBarButtonItems() {
+        for button in self.navigationItem.rightBarButtonItems! {
+            button.enabled = false
+        }
     }
 }
